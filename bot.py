@@ -1,7 +1,7 @@
 ﻿import discord
 from discord.ext import commands
 
-with open('token.txt', 'r') as infile:
+with open('D:\\Python\\Discord\\token.txt', 'r') as infile:
     data = [i.strip('\n') for i in infile.readlines()]
     TOKEN = data[0] #first line in token.txt
     #OWNER = data[1] #second line in token.txt
