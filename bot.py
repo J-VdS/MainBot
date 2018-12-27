@@ -7,7 +7,7 @@ with open('D:\\Python\\Discord\\token.txt', 'r') as infile:
     TOKEN = data[0] #first line in token.txt
     OWNER = data[1] #second line in token.txt
 
-client = commands.Bot(command_prefix = '!') #not used
+client = commands.Bot(command_prefix = '..') 
 emos = {}
 
 def is_owner(ctx):
@@ -63,5 +63,8 @@ async def on_command_error(ctx,error):
 async def eval(ctx, *args):
     print(eval(''.join((i+' ' for i in args))))
     
-    
+try:
+    client.load_extension('cogs.mmap')
+except Exception as e:
+    print(e)
 client.run(TOKEN)
