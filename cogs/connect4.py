@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
-import random
-#import checks
+
 #custom emoji check
 def custom(reaction, user):
         return not reaction.custom_emoji
@@ -75,6 +74,7 @@ class Connect4(object):
         return ctx
     
     @connect4.command(pass_context=True, hidden=True)
+    @commands.check()
     async def change_mode(self, ctx):
         self.mode = (self.mode+1)%2
         print('join' if self.mode else 'host')

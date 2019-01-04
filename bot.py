@@ -22,7 +22,7 @@ async def on_ready():
     print(emos)
     
 #loading cogs
-@client.command(pass_context=True)
+@client.command(pass_context=True, hidden=True)
 @commands.check(is_owner)
 async def load(ctx, cog=None):
     if not cog:
@@ -34,7 +34,7 @@ async def load(ctx, cog=None):
     except Exception as e:
         print(f'failed to load {cog} reason: [{e}]')
 
-@client.command(pass_context=True)
+@client.command(pass_context=True, hidden=True)
 @commands.check(is_owner)
 async def unload(ctx, cog=None):
     if not cog:
@@ -58,7 +58,7 @@ async def on_command_error(ctx,error):
 '''
 
 #testing
-@client.command(pass_context=True)
+@client.command(pass_context=True, hidden=True)
 @commands.check(is_owner)
 async def eval(ctx, *args):
     print(eval(''.join((i+' ' for i in args))))
